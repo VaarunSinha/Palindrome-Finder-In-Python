@@ -1,32 +1,21 @@
-# Number
-print("Palinderome number finder!")
+def reverse_value(value):
+ reversedValue = value[::-1]
+ return reversedValue
 
-# Input
-Number = input("Enter your number: ")
-try:
-    int(Number)
-except ValueError:
-    print("Please Enter a Number")
-    Number = input("Enter your number: ")
+def is_palindrome(value):
+    reversedValue = reverse_value(value)
+    if reversedValue == value:
+        return True
+    else:
+         return False
 
-# Reverse
-Reversed_Num = Number[::-1]
-# Check if it's a palindrome Number.
-if int(Reversed_Num) == int(Number):
-    print("{} is a palindrome number 😊".format(Number))
+userInputw = input("Enter The Value:\n")
+
+userInput = userInputw.replace(" ", "")
+
+isPalindrome = is_palindrome(userInput)
+
+if isPalindrome:
+    print(f"{userInputw} is equal to it's reverse {userInputw} therefore it is a palindrome.")
 else:
-    print("{} is not a palindrome number 🤨".format(Number))
-
-# Word
-
-print("Palindrome Word finder!")
-
-# Input
-String = input("Enter your word: ")
-# Reverse
-Reversed_String = String[::-1]
-# Check if it's a palindrome word.
-if Reversed_String == String:
-    print("{} is a palindrome word 😊".format(String))
-else:
-    print("{} is not a palindrome word 🤨".format(String))
+     print(f"{userInput} is not equal to it's reverse {reverse_value(userInput)} therefore it is not a palindrome.")
